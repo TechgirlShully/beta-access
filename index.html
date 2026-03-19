@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello!</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background: linear-gradient(-45deg,#ff0080,#ff8c00,#40e0d0,#7b00ff);
+background-size:400% 400%;
+animation: gradientMove 10s ease infinite;
+overflow:hidden;
+}
+
+/* Gradient animation */
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Floating bubbles */
+.bubble{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.2);
+animation: float 10s infinite;
+}
+
+.b1{width:120px;height:120px;left:10%;top:80%;}
+.b2{width:80px;height:80px;left:80%;top:90%;animation-delay:2s;}
+.b3{width:150px;height:150px;left:50%;top:100%;animation-delay:4s;}
+.b4{width:60px;height:60px;left:30%;top:85%;animation-delay:6s;}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-120vh);}
+}
+
+/* Card */
+.card{
+background:rgba(0,0,0,0.6);
+padding:60px;
+border-radius:25px;
+text-align:center;
+color:white;
+width:80%;
+max-width:600px;
+backdrop-filter:blur(10px);
+animation: pop 1s ease;
+}
+
+@keyframes pop{
+0%{transform:scale(0.5);opacity:0;}
+100%{transform:scale(1);opacity:1;}
+}
+
+h1{
+font-size:45px;
+margin-bottom:20px;
+}
+
+p{
+font-size:22px;
+line-height:1.5;
+}
+
+button{
+margin-top:30px;
+padding:18px 30px;
+font-size:20px;
+border:none;
+border-radius:12px;
+background:#ff0080;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#00e5ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+
+<div class="card" id="card">
+
+<h1>YOU DON CLICK THIS LINK AGAIN?? 😭</h1>
+
+<p>
+Na every link you see you dey click like say dem dey dash you free data? Na swear?<br><br>
+Calm down nau 😭
+</p>
+<p>Anyways, If you want to do something like this or something else for your loved ones just hit me up. Okay?</p>
+
+<button onclick="changeText()">I go try control myself</button>
+
+</div>
+
+<script>
+
+function changeText(){
+document.getElementById("card").innerHTML =
+"<h1>Too Late 😭</h1><p>I don send Screenshot go group chat.</p>"
+}
+
+</script>
+
+</body>
+</html>
